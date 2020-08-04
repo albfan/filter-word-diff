@@ -8,13 +8,13 @@ One of the most disrupting noise inside diffs is about indentation changes. They
 
 By now this is a filter for **git diff --word-diff=porcelain** which works on **--color** or plain output, I will work to provide an ecosystem to ease it use.
 
-#Test
+# Test
 
 ```bash
-$ git clone albfan:word-diff-filter
-$ cd word-diff-filter
-$ ln -s $(pwd)/word-diff-filter.py ~/bin/word-diff-filter
+$ git clone https://github.com/albfan/filter-word-diff.git
+$ cd filter-word-diff/
+$ ln -s $(pwd)/filter-word-diff.py ~/bin/filter-word-diff
 $ cd <path-to-your-repo>
-$ git diff --word-diff=porcelain --color master feature | word-diff-filter
+$ git diff --word-diff=porcelain --color master feature | filter-word-diff
 ```
 
