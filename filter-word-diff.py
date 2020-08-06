@@ -37,7 +37,7 @@ for line in sys.stdin:
         #new chunk. does the actual contains a change
         printChunk()
 
-    chunk += line
+    chunk += line.rstrip() + '\x1b[m\n'
 
     if not change:
         change = re.match("^"+COLOR+"\+", line) or re.match("^"+COLOR+"-", line)
