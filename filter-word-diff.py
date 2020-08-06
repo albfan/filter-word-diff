@@ -5,7 +5,7 @@ import re
 
 header = ""
 chunk = ""
-add = 0
+skip = 0
 change = False
 
 COLOR="(\x1b\[\d*m)?"
@@ -23,11 +23,11 @@ for line in sys.stdin:
     if re.match("^"+COLOR+"diff --git", line):
         printChunk()
         header = ""
-        add = 5
+        skip = 5
 
-    if (add > 0):
+    if (skip > 0):
         header += line
-        add -= 1
+        skip -= 1
         continue
         
     if re.match("^"+COLOR+"~", line):
