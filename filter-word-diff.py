@@ -13,9 +13,9 @@ def printChunk():
     global header, chunk, change
     if change:
         if header:
-            print(header)
+            print(header.rstrip())
             header = ""
-        print(chunk)
+        print(chunk.rstrip())
     chunk = ""
     change = False
 
